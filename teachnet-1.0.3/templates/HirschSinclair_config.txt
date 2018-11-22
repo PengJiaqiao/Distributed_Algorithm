@@ -1,0 +1,24 @@
+[graph.random]
+teachnet.util.RandomRingGenerator
+n=java.lang.Integer:16
+
+[network]
+teachnet.network.LinearDelayNetwork
+# minimum message delay (in seconds)
+delay.min=java.lang.Double:1.0
+# maximum message delay (in seconds)
+delay.max=java.lang.Double:2.0
+
+[stack.algorithms]
+HirschSinclair
+
+[stack.configs]
+0.node.id=java.lang.String:$node.id
+0.network.size=java.lang.String:$network.size
+0.topology=java.lang.String:ring
+
+[inits]
+# initialise layer 1 of node 0 at 10 seconds simulation time
+# 0,1,10.0
+# node id,layer id, time delay
+0,0,0.0
