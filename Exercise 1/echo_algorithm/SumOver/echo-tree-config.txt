@@ -1,19 +1,18 @@
 [graph]
 # number of nodes
-9
+6
 
-# connections Ring Topology of 9 nodes
-0,0-8,1
-2,0-0,1
-4,0-2,1
-7,0-4,1
-6,0-7,1
-5,0-6,1
-1,0-5,1
-3,0-1,1
-8,0-3,1
+# connections
+0-1
+0-2
+1-3
+2-4
+2-5
 
-
+#[graph.random]
+#teachnet.util.RandomConnectedGraphGenerator
+#n=java.lang.Integer:10
+#e=java.lang.Integer:30
 
 
 [network]
@@ -22,12 +21,11 @@ delay.min=java.lang.Double:0.8
 delay.max=java.lang.Double:2.0
 
 [stack.algorithms]
-ChangRobertsAlgorithm
+EchoSumOverAlgorithm
 
 [stack.configs]
 0.node.id=java.lang.String:$node.id
 
 [inits]
-5,0,0.0
-6,0,0.0
-7,0,0.0
+#*,0,0.0
+0,0,0.0

@@ -10,7 +10,7 @@ delay.min=java.lang.Double:1.0
 delay.max=java.lang.Double:2.0
 
 [stack.algorithms]
-Hirsch_Sinclair
+HirschbergSinclairAlgorithm
 
 [stack.configs]
 0.node.id=java.lang.String:$node.id

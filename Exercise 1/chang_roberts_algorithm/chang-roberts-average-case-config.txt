@@ -1,7 +1,7 @@
+
 [graph.random]
 teachnet.util.RandomRingGenerator
-n=java.lang.Integer:10
-#e=java.lang.Integer:30
+n=java.lang.Integer:9
 
 
 [network]
@@ -15,8 +15,8 @@ ChangRobertsAlgorithm
 [stack.configs]
 0.node.id=java.lang.String:$node.id
 
+
 [inits]
 1,0,0.0
-3,0,0.0
-5,0,0.0
+4,0,0.0
 7,0,0.0

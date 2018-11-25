@@ -1,9 +1,19 @@
-import teachnet.algorithm.BasicAlgorithm;
+/**
+Group 8
+1. Alexandre Georges Rémi Martin, 406294
+2. Benyamin Shafabakhsh, 406305
+3. Yared Dejene Dessalk, 406228
+4. Anubhav Guha, 406244
+5. Jiaqiao Peng, 406038
 
+ * Implementation of Echo Algorithm
+ */
+
+import teachnet.algorithm.BasicAlgorithm;
 import java.awt.Color;
 import java.util.Random;
 
-public class MyAlgorithm extends BasicAlgorithm
+public class EchoAlgorithm extends BasicAlgorithm
 {
 	Color color = Color.WHITE;
 	int markInterface = -1;

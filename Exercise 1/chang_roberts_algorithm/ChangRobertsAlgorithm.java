@@ -1,6 +1,12 @@
 
 /**
- * 
+Group 8
+1. Alexandre Georges Rémi Martin, 406294
+2. Benyamin Shafabakhsh, 406305
+3. Yared Dejene Dessalk, 406228
+4. Anubhav Guha, 406244
+5. Jiaqiao Peng, 406038
+
  * Implementation of Chang and Roberts Algorithm
  */
 
@@ -39,14 +45,14 @@ public class ChangRobertsAlgorithm extends BasicAlgorithm
         ChangRobertsMessage msg = (ChangRobertsMessage) message;         
         
         int highestId = msg.getHighestId();
-        boolean isConfirmation = msg.getIsConfirmation(); 
+        boolean isWinNotification = msg.getIsWinNotification(); 
 
-        //For normal messages that are not confirmation types
-        if(!isConfirmation){
+        //For normal messages that are not win notification types
+        if(!isWinNotification){
 
             //Initiator nodes
             if(isCandidate){
-                //Dismiss the incoming message if its highest Id is less than the current node id
+                //Dismiss the incoming message if its highest id is less than the current node id
                 if(electedId < highestId){
                     electedId = highestId;
                     sendMessageClockwise(interf, new ChangRobertsMessage(electedId));
@@ -55,10 +61,10 @@ public class ChangRobertsAlgorithm extends BasicAlgorithm
                 //Check if the circulating message comes back to the initiator that has the highest node id
                 if(highestId == id){
                     electedId = id;
-                    caption = "I am the master";
+                    caption = id + ":  I am the master";
                     isWinnerKnown = true;
-                    color = Color.green;   
-                    //trigger confirmation messager since the winner is known                 
+                    color = Color.CYAN;   
+                    //trigger win notification messager since the winner is known                 
                     sendMessageClockwise(interf, new ChangRobertsMessage(id, true)); 
                 }
             }
@@ -69,11 +75,11 @@ public class ChangRobertsAlgorithm extends BasicAlgorithm
             }         
             
         }
-        //For confirmation messages
+        //For on the ring in descending order and initiate election in ascending order messages
         else{
             if(!isWinnerKnown){                
                 electedId = highestId;
-                caption = electedId + " is the master";
+                caption = id + ":  " + electedId + " is the master";
                 isWinnerKnown = true;
                 color = Color.green;
                 sendMessageClockwise(interf, msg); //forward confirmation message
